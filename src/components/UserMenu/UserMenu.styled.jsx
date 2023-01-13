@@ -21,6 +21,6 @@ export const Button = styled.button`
     color: ${p => p.theme.colors.textActive};
   };
    &:active {
-    scale: 0;
+    scale: 0.9;
   };
 `;
