@@ -39,7 +39,7 @@ export const AuthForm = () => {
           2,
           "It's okay, we won't tell anyone about this. But let's make the name a little longer"
         )
-        .max(30, 'Wow!!! Ho are you a warrior?!?! Max 30 symbols!'),
+        .max(30, 'Wow!!! Who are you a warrior?!?! Max 30 symbols!'),
   });
 
   const handleSubmitForm = ({ name, email, password }, { resetForm }) => {
