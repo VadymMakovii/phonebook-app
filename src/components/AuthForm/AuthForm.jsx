@@ -115,9 +115,9 @@ export const AuthForm = () => {
               onClick={() => setIsShowPassword(!isShowPassword)}
             >
               {isShowPassword ? (
-                <FaEyeSlash size="24px" />
-              ) : (
                 <FaEye size="24px" />
+              ) : (
+                <FaEyeSlash size="24px" />
               )}
             </ShowPasswordBtn>
             {errors.password && touched.password ? (
