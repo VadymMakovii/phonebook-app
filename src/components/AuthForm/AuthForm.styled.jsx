@@ -42,10 +42,13 @@ export const Input = styled(Field)`
   border-color: transparent;
   outline: transparent;
   transition: ${p => p.theme.transitions.all};
-  &:focus,
-  &:hover {
+  &:focus:not(:disabled),
+  &:hover:not(:disabled) {
     background-color: ${p => p.theme.colors.primary};
     border-color: ${p => p.theme.colors.outline};
+  };
+  &:disabled {
+    cursor: not-allowed;
   }
 `;
 

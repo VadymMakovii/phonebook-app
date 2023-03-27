@@ -4,11 +4,15 @@ import { useLocation } from 'react-router-dom';
 import { Formik } from 'formik';
 import toast from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { selectIsLoading } from 'redux/Contacts/contactsSelectors';
+import { selectIsLoading } from 'redux/Auth/authSelectors';
 import { Button } from 'components/Button/Button';
 import { Box } from 'components/Box/Box';
 import { register, login } from 'redux/Auth/authOperations';
-import { ErrorStatus, loginValidationSchema, registerValidationSchema } from '../../helpers';
+import {
+  ErrorStatus,
+  loginValidationSchema,
+  registerValidationSchema,
+} from '../../helpers';
 import {
   Input,
   Label,
@@ -16,7 +20,6 @@ import {
   StyledForm,
   ShowPasswordBtn,
 } from './AuthForm.styled';
-
 
 export const AuthForm = () => {
   const [isShowPassword, setIsShowPassword] = useState(false);
@@ -27,17 +30,13 @@ export const AuthForm = () => {
   const handleSubmitForm = ({ name, email, password }, { resetForm }) => {
     switch (pathname) {
       case '/register':
-        dispatch(register({ name, email, password })).then((res) =>
-          res.error
-            ? toast.error(ErrorStatus[res.payload])
-            : resetForm()
+        dispatch(register({ name, email, password })).then(res =>
+          res.error ? toast.error(ErrorStatus[res.payload]) : resetForm()
         );
         break;
       case '/login':
-        dispatch(login({ email, password })).then((res) =>
-          res.error
-            ? toast.error(ErrorStatus[res.payload])
-            : resetForm()
+        dispatch(login({ email, password })).then(res =>
+          res.error ? toast.error(ErrorStatus[res.payload]) : resetForm()
         );
         break;
       default:
@@ -59,7 +58,11 @@ export const AuthForm = () => {
     <Formik
       initialValues={{ name: '', email: '', password: '' }}
       onSubmit={handleSubmitForm}
-      validationSchema={pathname === '/register' ? registerValidationSchema : loginValidationSchema}
+      validationSchema={
+        pathname === '/register'
+          ? registerValidationSchema
+          : loginValidationSchema
+      }
       validateOnBlur
     >
       {({ errors, touched, isValid, dirty }) => (
@@ -77,7 +80,7 @@ export const AuthForm = () => {
           )}
           <Label htmlFor="email">
             Email
-            <Input type="email" name="email" />
+            <Input type="email" name="email" disabled={isLoading} />
             {errors.email && touched.email ? (
               <Box fontSize="xs" color="red" mt={2}>
                 {errors.email}
@@ -89,6 +92,7 @@ export const AuthForm = () => {
             <Input
               type={isShowPassword ? 'text' : 'password'}
               name="password"
+              disabled={isLoading}
             />
             <ShowPasswordBtn
               type="button"

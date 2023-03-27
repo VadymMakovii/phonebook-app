@@ -8,16 +8,19 @@ const authFulfilledReducer = (state, action) => {
   state.user = action.payload.data.user;
   state.token = action.payload.data.token;
   state.isLoggedIn = true;
+  state.isLoading = false;
 };
 const logoutFulfilledReducer = state => {
   state.user = { name: null, email: null };
   state.isLoggedIn = false;
   state.token = null;
+  state.isLoading = false;
 };
 const refreshFulfilledReducer = (state, action) => {
   state.user = action.payload;
   state.isLoggedIn = true;
   state.isRefreshing = false;
+  state.isLoading = false;
 };
 const refreshPendingReducer = state => {
   state.isRefreshing = true;
@@ -26,7 +29,7 @@ const refreshRejectedReducer = state => {
   state.isRefreshing = false;
 };
 const anyPendingReducer = state => {
-  return state;
+  state.isLoading = true
 };
 const anyRejectedReducer = (state, action) => {
   state.error = action.payload?.message || action.payload;
@@ -39,6 +42,7 @@ const authSlice = createSlice({
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
+    isLoading: false,
     error: null,
     theme: 'Dark',
   },
