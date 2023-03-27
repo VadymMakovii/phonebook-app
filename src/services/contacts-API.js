@@ -2,6 +2,7 @@ import axios from 'axios';
 
 axios.defaults.baseURL = "https://phonebook-back-vgbi.onrender.com/api";
 
+
 export const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
