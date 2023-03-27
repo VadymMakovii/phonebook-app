@@ -29,9 +29,10 @@ const refreshRejectedReducer = state => {
   state.isRefreshing = false;
 };
 const anyPendingReducer = state => {
-  state.isLoading = true
+  state.isLoading = true;
 };
 const anyRejectedReducer = (state, action) => {
+  state.isLoading = false;
   state.error = action.payload?.message || action.payload;
 };
 
