@@ -12,28 +12,34 @@ const getActions = type => isAnyOf(...extraActions.map(action => action[type]));
 const fetchContactsFulfilledReducer = (state, action) => {
   state.items = action.payload;
 };
+
 const addContactFulfilledReducer = (state, action) => {
   state.items.push(action.payload);
 };
+
 const deleteContactFulfilledReducer = (state, action) => {
   const index = state.items.findIndex(
     contact => contact.id === action.payload.id
   );
   state.items.splice(index, 1);
 };
+
 const changeContactFulfilledReducer = (state, action) => {
   const index = state.items.findIndex(
     contact => contact.id === action.payload.id
   );
   state.items.splice(index, 1, action.payload);
 };
+
 const commonPendingReducer = state => {
   state.isLoading = true;
 };
+
 const anyRejectedReducer = (state, action) => {
   state.isLoading = false;
   state.error = action.payload;
 };
+
 const anyFulfilledReducer = state => {
   state.error = null;
   state.isLoading = false;

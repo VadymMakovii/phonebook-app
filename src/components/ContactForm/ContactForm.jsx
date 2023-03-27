@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Formik } from 'formik';
-import * as yup from 'yup';
 import toast from 'react-hot-toast';
 import PropTypes from 'prop-types';
+import { contactValidationSchema } from '../../helpers';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectContacts,
@@ -23,27 +23,8 @@ export const ContactForm = ({ id, value, phone, onClose }) => {
     id && setIsEditForm(true);
   }, [id]);
 
-  const phoneRegExp =
-    /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}?$/;
-
-  const validationSchema = yup.object().shape({
-    name: yup
-      .string()
-      .required('Required')
-      .min(1, 'Too Short! Min 1 symbols!')
-      .max(30, 'Too Long! Max 30 symbols!'),
-    number: yup
-      .string()
-      .required('Required')
-      .min(6, 'Too Short! Min 6 symbols!')
-      .max(20, 'Too Long! Max 20 symbols!')
-      .matches(
-        phoneRegExp,
-        'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +'
-      ),
-  });
-
-  const handleSubmitForm = ({ name, number }, { resetForm }) => {
+  
+  const handleSubmitForm = ({ name, phone }, { resetForm }) => {
     const newContactAudit = contacts.some(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
@@ -55,7 +36,7 @@ export const ContactForm = ({ id, value, phone, onClose }) => {
     switch (isEditForm) {
       case false:
         if (!newContactAudit) {
-          dispatch(addContact({ name, number }));
+          dispatch(addContact({ name, phone }));
           resetForm();
         } else {
           toast.error(`${name} is already in contacts.`);
@@ -63,7 +44,7 @@ export const ContactForm = ({ id, value, phone, onClose }) => {
         break;
       case true:
         if (!editContactAudit) {
-          dispatch(changeContact({ id, name, number }));
+          dispatch(changeContact({ id, name, phone }));
           onClose();
           resetForm();
         } else {
@@ -77,9 +58,9 @@ export const ContactForm = ({ id, value, phone, onClose }) => {
 
   return (
     <Formik
-      initialValues={{ name: value ?? '', number: phone ?? '' }}
+      initialValues={{ name: value ?? '', phone: phone ?? '' }}
       onSubmit={handleSubmitForm}
-      validationSchema={validationSchema}
+      validationSchema={contactValidationSchema}
       validateOnBlur
     >
       {({ errors, touched, isValid, dirty }) => (
@@ -93,12 +74,12 @@ export const ContactForm = ({ id, value, phone, onClose }) => {
               </Box>
             ) : null}
           </Label>
-          <Label htmlFor="number">
-            Number
-            <Input type="tel" name="number" />
-            {errors.number && touched.number ? (
+          <Label htmlFor="phone">
+            Phone
+            <Input type="tel" name="phone" />
+            {errors.phone && touched.phone ? (
               <Box fontSize="xs" color="red" mt={2}>
-                {errors.number}
+                {errors.phone}
               </Box>
             ) : null}
           </Label>

@@ -5,8 +5,8 @@ const extraActions = [register, login, logout];
 const getActions = type => isAnyOf(...extraActions.map(action => action[type]));
 
 const authFulfilledReducer = (state, action) => {
-  state.user = action.payload.user;
-  state.token = action.payload.token;
+  state.user = action.payload.data.user;
+  state.token = action.payload.data.token;
   state.isLoggedIn = true;
 };
 const logoutFulfilledReducer = state => {
@@ -29,7 +29,7 @@ const anyPendingReducer = state => {
   return state;
 };
 const anyRejectedReducer = (state, action) => {
-  state.error = action.payload;
+  state.error = action.payload?.message || action.payload;
 };
 
 const authSlice = createSlice({

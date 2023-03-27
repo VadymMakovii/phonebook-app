@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { Formik } from 'formik';
-import * as yup from 'yup';
+import toast from 'react-hot-toast';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { selectIsLoading } from 'redux/Contacts/contactsSelectors';
 import { Button } from 'components/Button/Button';
 import { Box } from 'components/Box/Box';
 import { register, login } from 'redux/Auth/authOperations';
+import { ErrorStatus, loginValidationSchema, registerValidationSchema } from '../../helpers';
 import {
   Input,
   Label,
@@ -14,8 +16,7 @@ import {
   StyledForm,
   ShowPasswordBtn,
 } from './AuthForm.styled';
-import toast from 'react-hot-toast';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+
 
 export const AuthForm = () => {
   const [isShowPassword, setIsShowPassword] = useState(false);
@@ -23,40 +24,19 @@ export const AuthForm = () => {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
 
-  const validationSchema = yup.object().shape({
-    email: yup.string().required('Required').email('Invalid email'),
-    password: yup
-      .string()
-      .required('Required')
-      .min(4, 'Too Short! Min 4 symbols!')
-      .max(10, 'Too Long! Max 10 symbols!'),
-    name:
-      pathname === '/register' &&
-      yup
-        .string()
-        .required('Required')
-        .min(
-          2,
-          "It's okay, we won't tell anyone about this. But let's make the name a little longer"
-        )
-        .max(30, 'Wow!!! Who are you a warrior?!?! Max 30 symbols!'),
-  });
-
   const handleSubmitForm = ({ name, email, password }, { resetForm }) => {
     switch (pathname) {
       case '/register':
-        dispatch(register({ name, email, password })).then(({ error }) =>
-          error
-            ? toast.error(
-                'A user with this email address or name is already registered. Please log in or enter a different email address'
-              )
+        dispatch(register({ name, email, password })).then((res) =>
+          res.error
+            ? toast.error(ErrorStatus[res.payload])
             : resetForm()
         );
         break;
       case '/login':
-        dispatch(login({ email, password })).then(({ error }) =>
-          error
-            ? toast.error('Wrong email or password. Try again!')
+        dispatch(login({ email, password })).then((res) =>
+          res.error
+            ? toast.error(ErrorStatus[res.payload])
             : resetForm()
         );
         break;
@@ -79,7 +59,7 @@ export const AuthForm = () => {
     <Formik
       initialValues={{ name: '', email: '', password: '' }}
       onSubmit={handleSubmitForm}
-      validationSchema={validationSchema}
+      validationSchema={pathname === '/register' ? registerValidationSchema : loginValidationSchema}
       validateOnBlur
     >
       {({ errors, touched, isValid, dirty }) => (

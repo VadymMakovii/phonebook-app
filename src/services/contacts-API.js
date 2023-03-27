@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
-
+axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
 
 export const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -12,7 +11,7 @@ export const clearAuthHeader = () => {
 };
 
 export const createUser = async (credentials) => {
-  const { data } = await axios.post('/users/signup', credentials);
+  const { data } = await axios.post('/users/register', credentials);
   return data;
 };
 
@@ -36,8 +35,8 @@ export const getContacts = async () => {
   return data;
 };
 
-export const postContact = async (name, number) => {
-  const { data } = await axios.post('/contacts', { name, number });
+export const postContact = async (name, phone) => {
+  const { data } = await axios.post('/contacts', { name, phone });
   return data;
 };
 
@@ -46,7 +45,7 @@ export const removeContact = async id => {
   return data;
 };
 
-export const editContact = async (id, name, number) => {
-  const { data } = await axios.patch(`/contacts/${id}`, { name, number });
+export const editContact = async (id, name, phone) => {
+  const { data } = await axios.put(`/contacts/${id}`, { name, phone });
   return data;
 };

@@ -9,7 +9,7 @@ import { Item, BtnBox, ContactBox, Name, Number } from './ContactItem.styled';
 import { FaUser, FaPhoneAlt } from 'react-icons/fa';
 import { Box } from 'components/Box/Box';
 
-export const ContactItem = ({ id, name, number }) => {
+export const ContactItem = ({ id, name, phone }) => {
   const [showModal, setShowModal] = useState(false);
   const [isDeleted, setIsDeleted] = useState(false);
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ export const ContactItem = ({ id, name, number }) => {
         </Box>
         <Box display="flex" alignItems="center" gridGap={2}>
           <FaPhoneAlt />
-          <Number>{number}</Number>
+          <Number>{phone}</Number>
         </Box>
       </ContactBox>
       <BtnBox>
@@ -49,7 +49,7 @@ export const ContactItem = ({ id, name, number }) => {
             onClose={toggleModal}
             id={id}
             value={name}
-            phone={number}
+            phone={phone}
           />
         </Modal>
       )}
@@ -60,5 +60,5 @@ export const ContactItem = ({ id, name, number }) => {
 ContactItem.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired,
 };
