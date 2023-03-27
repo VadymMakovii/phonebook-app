@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/phonebook-app/static/css/main.d905b33c.css",
-    "main.js": "/phonebook-app/static/js/main.add715f7.js",
+    "main.js": "/phonebook-app/static/js/main.e3083c35.js",
     "static/js/795.3bb5c9a1.chunk.js": "/phonebook-app/static/js/795.3bb5c9a1.chunk.js",
-    "static/js/381.6075f4ba.chunk.js": "/phonebook-app/static/js/381.6075f4ba.chunk.js",
-    "static/js/472.a8fc6317.chunk.js": "/phonebook-app/static/js/472.a8fc6317.chunk.js",
-    "static/js/796.4783bc0b.chunk.js": "/phonebook-app/static/js/796.4783bc0b.chunk.js",
+    "static/js/892.3490b6c1.chunk.js": "/phonebook-app/static/js/892.3490b6c1.chunk.js",
+    "static/js/472.5313cb77.chunk.js": "/phonebook-app/static/js/472.5313cb77.chunk.js",
+    "static/js/796.d1dbc831.chunk.js": "/phonebook-app/static/js/796.d1dbc831.chunk.js",
     "static/js/694.eaaa51fc.chunk.js": "/phonebook-app/static/js/694.eaaa51fc.chunk.js",
     "index.html": "/phonebook-app/index.html",
     "main.d905b33c.css.map": "/phonebook-app/static/css/main.d905b33c.css.map",
-    "main.add715f7.js.map": "/phonebook-app/static/js/main.add715f7.js.map",
+    "main.e3083c35.js.map": "/phonebook-app/static/js/main.e3083c35.js.map",
     "795.3bb5c9a1.chunk.js.map": "/phonebook-app/static/js/795.3bb5c9a1.chunk.js.map",
-    "381.6075f4ba.chunk.js.map": "/phonebook-app/static/js/381.6075f4ba.chunk.js.map",
-    "472.a8fc6317.chunk.js.map": "/phonebook-app/static/js/472.a8fc6317.chunk.js.map",
-    "796.4783bc0b.chunk.js.map": "/phonebook-app/static/js/796.4783bc0b.chunk.js.map",
+    "892.3490b6c1.chunk.js.map": "/phonebook-app/static/js/892.3490b6c1.chunk.js.map",
+    "472.5313cb77.chunk.js.map": "/phonebook-app/static/js/472.5313cb77.chunk.js.map",
+    "796.d1dbc831.chunk.js.map": "/phonebook-app/static/js/796.d1dbc831.chunk.js.map",
     "694.eaaa51fc.chunk.js.map": "/phonebook-app/static/js/694.eaaa51fc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d905b33c.css",
-    "static/js/main.add715f7.js"
+    "static/js/main.e3083c35.js"
   ]
 }
