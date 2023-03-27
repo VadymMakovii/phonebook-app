@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/phonebook-app/static/css/main.d905b33c.css",
-    "main.js": "/phonebook-app/static/js/main.f02a75c8.js",
+    "main.js": "/phonebook-app/static/js/main.fccc2a7f.js",
     "static/js/795.3bb5c9a1.chunk.js": "/phonebook-app/static/js/795.3bb5c9a1.chunk.js",
-    "static/js/381.6d444b39.chunk.js": "/phonebook-app/static/js/381.6d444b39.chunk.js",
-    "static/js/472.d263557f.chunk.js": "/phonebook-app/static/js/472.d263557f.chunk.js",
-    "static/js/796.fd93e7eb.chunk.js": "/phonebook-app/static/js/796.fd93e7eb.chunk.js",
+    "static/js/381.6075f4ba.chunk.js": "/phonebook-app/static/js/381.6075f4ba.chunk.js",
+    "static/js/472.a8fc6317.chunk.js": "/phonebook-app/static/js/472.a8fc6317.chunk.js",
+    "static/js/796.4783bc0b.chunk.js": "/phonebook-app/static/js/796.4783bc0b.chunk.js",
     "static/js/694.eaaa51fc.chunk.js": "/phonebook-app/static/js/694.eaaa51fc.chunk.js",
     "index.html": "/phonebook-app/index.html",
     "main.d905b33c.css.map": "/phonebook-app/static/css/main.d905b33c.css.map",
-    "main.f02a75c8.js.map": "/phonebook-app/static/js/main.f02a75c8.js.map",
+    "main.fccc2a7f.js.map": "/phonebook-app/static/js/main.fccc2a7f.js.map",
     "795.3bb5c9a1.chunk.js.map": "/phonebook-app/static/js/795.3bb5c9a1.chunk.js.map",
-    "381.6d444b39.chunk.js.map": "/phonebook-app/static/js/381.6d444b39.chunk.js.map",
-    "472.d263557f.chunk.js.map": "/phonebook-app/static/js/472.d263557f.chunk.js.map",
-    "796.fd93e7eb.chunk.js.map": "/phonebook-app/static/js/796.fd93e7eb.chunk.js.map",
+    "381.6075f4ba.chunk.js.map": "/phonebook-app/static/js/381.6075f4ba.chunk.js.map",
+    "472.a8fc6317.chunk.js.map": "/phonebook-app/static/js/472.a8fc6317.chunk.js.map",
+    "796.4783bc0b.chunk.js.map": "/phonebook-app/static/js/796.4783bc0b.chunk.js.map",
     "694.eaaa51fc.chunk.js.map": "/phonebook-app/static/js/694.eaaa51fc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d905b33c.css",
-    "static/js/main.f02a75c8.js"
+    "static/js/main.fccc2a7f.js"
   ]
 }
