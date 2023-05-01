@@ -1,23 +1,20 @@
 {
   "files": {
-    "main.css": "/phonebook-app/static/css/main.d905b33c.css",
-    "main.js": "/phonebook-app/static/js/main.f2af33d4.js",
-    "static/js/795.3bb5c9a1.chunk.js": "/phonebook-app/static/js/795.3bb5c9a1.chunk.js",
-    "static/js/892.3490b6c1.chunk.js": "/phonebook-app/static/js/892.3490b6c1.chunk.js",
-    "static/js/472.5313cb77.chunk.js": "/phonebook-app/static/js/472.5313cb77.chunk.js",
-    "static/js/796.d1dbc831.chunk.js": "/phonebook-app/static/js/796.d1dbc831.chunk.js",
-    "static/js/694.eaaa51fc.chunk.js": "/phonebook-app/static/js/694.eaaa51fc.chunk.js",
-    "index.html": "/phonebook-app/index.html",
-    "main.d905b33c.css.map": "/phonebook-app/static/css/main.d905b33c.css.map",
-    "main.f2af33d4.js.map": "/phonebook-app/static/js/main.f2af33d4.js.map",
-    "795.3bb5c9a1.chunk.js.map": "/phonebook-app/static/js/795.3bb5c9a1.chunk.js.map",
-    "892.3490b6c1.chunk.js.map": "/phonebook-app/static/js/892.3490b6c1.chunk.js.map",
-    "472.5313cb77.chunk.js.map": "/phonebook-app/static/js/472.5313cb77.chunk.js.map",
-    "796.d1dbc831.chunk.js.map": "/phonebook-app/static/js/796.d1dbc831.chunk.js.map",
-    "694.eaaa51fc.chunk.js.map": "/phonebook-app/static/js/694.eaaa51fc.chunk.js.map"
+    "main.css": "/technical-boost/static/css/main.0a235c7a.css",
+    "main.js": "/technical-boost/static/js/main.a6d545d0.js",
+    "static/js/478.ae353485.chunk.js": "/technical-boost/static/js/478.ae353485.chunk.js",
+    "static/js/605.70672191.chunk.js": "/technical-boost/static/js/605.70672191.chunk.js",
+    "static/js/476.9ef9a4f5.chunk.js": "/technical-boost/static/js/476.9ef9a4f5.chunk.js",
+    "static/media/bg_image.png": "/technical-boost/static/media/bg_image.86562350dcaa714a1442.png",
+    "index.html": "/technical-boost/index.html",
+    "main.0a235c7a.css.map": "/technical-boost/static/css/main.0a235c7a.css.map",
+    "main.a6d545d0.js.map": "/technical-boost/static/js/main.a6d545d0.js.map",
+    "478.ae353485.chunk.js.map": "/technical-boost/static/js/478.ae353485.chunk.js.map",
+    "605.70672191.chunk.js.map": "/technical-boost/static/js/605.70672191.chunk.js.map",
+    "476.9ef9a4f5.chunk.js.map": "/technical-boost/static/js/476.9ef9a4f5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d905b33c.css",
-    "static/js/main.f2af33d4.js"
+    "static/css/main.0a235c7a.css",
+    "static/js/main.a6d545d0.js"
   ]
 }
