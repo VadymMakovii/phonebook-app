@@ -1,25 +1,41 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { nanoid } from 'nanoid';
-import { setFilter } from 'redux/Filter/filterSlice';
-import { selectFilter } from 'redux/Contacts/contactsSelectors';
-import { Input, Label, Container } from './Filter.styled';
+import { useState } from 'react';
+import { Dropdown, List, Item, Option, CurrentValue } from './Filter.styled';
 
-export const Filter = () => {
-  const filterValue = useSelector(selectFilter);
-  const dispatch = useDispatch();
-  const inputId = nanoid();
+const Filter = ({ onClick }) => {
+  const [open, setOpen] = useState(false);
+  const [filterValue, setFilterValue] = useState(false);
+
+  const options = [
+    { id: 1, value: 'show all' },
+    { id: 2, value: 'follow' },
+    { id: 3, value: 'followings' },
+  ];
+
+  const setFilterHandler = value => {
+    onClick(value);
+    setOpen(!open);
+    setFilterValue(value);
+  };
 
   return (
-    <Container>
-      <Label htmlFor={inputId}>
-        Find contacts by name
-        <Input
-          id={inputId}
-          type="text"
-          onChange={e => dispatch(setFilter(e.currentTarget.value))}
-          value={filterValue}
-        />
-      </Label>
-    </Container>
+    <>
+      {!open && (
+        <>
+          <Dropdown onClick={() => setOpen(!open)}>filter</Dropdown>
+          <CurrentValue>{filterValue}</CurrentValue>
+        </>
+      )}
+      {open && (
+        <List>
+          {options.map(({ id, value }) => (
+            <Item key={id} id={id} onClick={() => setFilterHandler(value)}>
+              <Option>{value}</Option>
+            </Item>
+          ))}
+        </List>
+      )}
+    </>
   );
 };
+
+export default Filter;

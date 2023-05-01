@@ -1,5 +1,4 @@
-# Phonebook-app
+# Technical-boost
 
-This is the frontend part of a fullstack app for recording, creating and storing
-contacts. This app is designed to demonstrate an example of the development of a
-fullstack application.
+This App was created as part of the technical training course from the GoIT
+school.
