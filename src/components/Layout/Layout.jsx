@@ -1,15 +1,18 @@
-import { Wrapper } from './Layout.styled';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+import { Wrapper, Footer, Main } from './Layout.styled';
+import { AppBar } from 'components/AppBar/AppBar';
 
-const Layout = () => {
+export const Layout = () => {
   return (
     <Wrapper>
-      <Suspense>
-        <Outlet />
-      </Suspense>
+      <AppBar />
+      <Main>
+        <Suspense fallback={null}>
+          <Outlet />
+        </Suspense>
+      </Main>
+      <Footer />
     </Wrapper>
   );
 };
-
-export default Layout;

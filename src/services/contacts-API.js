@@ -1,18 +1,52 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://63b2f32a5901da0ab372e575.mockapi.io';
+axios.defaults.baseURL = "https://phonebook-back-vgbi.onrender.com/api";
 
-export const getTweets = async (page, limit) => {
-  const { data } = await axios.get('/users', { params: { page, limit } });
+
+export const setAuthHeader = token => {
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+};
+
+export const clearAuthHeader = () => {
+  axios.defaults.headers.common.Authorization = "";
+};
+
+export const createUser = async (credentials) => {
+  const { data } = await axios.post('/users/register', credentials);
   return data;
 };
 
-export const getTweetsById = async id => {
-  const { data } = await axios.get(`/users/${id}`);
+export const loginUser = async (credentials) => {
+  const { data } = await axios.post('/users/login', credentials);
   return data;
 };
 
-export const updatedTweetById = async (id, followers) => {
-  const { data } = await axios.put(`/users/${id}`, { followers });
+export const logoutUser = async () => {
+  const { data } = await axios.post('/users/logout');
+  return data;
+};
+
+export const refreshUser = async () => {
+  const { data } = await axios.get('/users/current');
+  return data;
+};
+
+export const getContacts = async () => {
+  const { data } = await axios.get('/contacts');
+  return data;
+};
+
+export const postContact = async (name, phone) => {
+  const { data } = await axios.post('/contacts', { name, phone });
+  return data;
+};
+
+export const removeContact = async id => {
+  const { data } = await axios.delete(`/contacts/${id}`);
+  return data;
+};
+
+export const editContact = async (id, name, phone) => {
+  const { data } = await axios.put(`/contacts/${id}`, { name, phone });
   return data;
 };

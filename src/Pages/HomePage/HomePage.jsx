@@ -1,16 +1,22 @@
-import { Container, Title, Description, StyledLink } from './HomePage.styled';
-
+import { Box } from 'components/Box/Box';
+import { useAuth } from 'hooks';
 
 const Home = () => {
+  const { isLoggedIn } = useAuth();
   return (
-    <Container
+    <Box
+      width="100%"
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      alignSelf="center"
     >
-      <Title>
-        Welcome to the tweets App !!! 
-      </Title>
-      <Description>This App was created as part of the technical training course from the GoIT school</Description>
-      <StyledLink to="/tweets">go</StyledLink>
-    </Container>
+      <Box as="p" fontWeight="medium" lineHeight="1.25" fontSize="xl">
+        {!isLoggedIn
+          ? 'Welcome to Phonebook app!!! Here you can store, edit and delete your contacts without worrying about their safety. To work in the application, you must register or log in to the application.'
+          : 'We are glad that you are using Phonebook and we hope that you did not have any difficulties using it. We are constantly striving to make the app even better and hope you enjoy it.'}
+      </Box>
+    </Box>
   );
 };
 

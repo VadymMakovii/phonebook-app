@@ -1,11 +1,10 @@
 @import-normalize;
 /* bring in normalize.css styles */
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Montserrat:wght@400;500;600&family=Roboto:wght@400;500;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Roboto:wght@400;500;700&family=Ubuntu:wght@300;400;500;700&display=swap');
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Montserrat' 'Heebo',
-    'Ubuntu', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Heebo', 'Ubuntu', sans-serif;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -14,11 +13,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-:root {
-  --toastify-color-light: #510eedac;
-  --toastify-color-error: #e74a3b;
-  --toastify-font-family: Montserrat, sans-serif;
-  --toastify-text-color-light: #f8f4fc;
 }
